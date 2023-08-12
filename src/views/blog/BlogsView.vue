@@ -1,5 +1,5 @@
 <template>
-  AboutView
+  BlogsView
 </template>
 
 <script lang="ts" setup>

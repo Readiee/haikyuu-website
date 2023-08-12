@@ -65,7 +65,7 @@ const routes = [
 	{ title: 'Персонажи', to: { name: 'characters' } },
 	{ title: 'Вики', to: { name: 'wiki' } },
 	{ title: 'Мерч', to: { name: 'merch' } },
-	{ title: 'Блог', to: { name: 'blog' } },
+	{ title: 'Блоги', to: { name: 'blogs' } },
 ]
 </script>
 

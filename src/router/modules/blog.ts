@@ -1,8 +1,8 @@
 export default [
 	{
-		path: '/blog',
-		name: 'blog',
-		component: () => import('@/views/blog/BlogView.vue'),
+		path: '/blogs',
+		name: 'blogs',
+		component: () => import('@/views/blog/BlogsView.vue'),
 		middleware: false, // Публичная
 		// children: [
 		// 	{

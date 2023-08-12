@@ -16,7 +16,7 @@
 
     
     <div class="caption__level mt-1 align-center d-flex justify-space-between">
-      <btn-arrow-plain />
+      <btn-arrow-plain @click="routeTo()" />
       <div class="d-flex align-center">
         {{ props.blog.views }}
         <v-icon class="ms-2">

@@ -36,7 +36,7 @@
             <p class="text-h7 mb-1 font-weight-bold">
               Жанры
             </p>
-            <p class="text-body-2">
+            <p class="text-body-2 text-no-wrap">
               Драма, Комедия, Спорт, Школа
             </p>
           </div>
