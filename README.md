@@ -1,4 +1,5 @@
-# default
+# Website Haikyuu
+Frontend-проект, сделанный для личного пользования по макету: https://www.behance.net/gallery/149042645/Anime-Haikyu-website?tracking_source=search_projects_appreciations%7Canime+website
 
 ## Project setup
 
