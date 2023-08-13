@@ -155,7 +155,6 @@ img {
   justify-content: center;
   align-items: center;
   overscroll-behavior: contain;
-
 }
 
 </style>

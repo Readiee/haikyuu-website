@@ -6,22 +6,29 @@
 </template>
 
 <script setup lang="ts">
+import { ref } from 'vue'
+
 const props = defineProps({
 	size: { type: String, default: 'medium' },
 	imageRef: { type: String, default: 'src/assets/images/episodes/4-20.png' }
 })
-let width = ''
-let height = ''
+const width = ref('')
+const height = ref('')
 switch (props.size) {
 case 'medium':
-	width = '390px'
-	height = '219px'
+	width.value = '390px'
+	height.value = '219px'
 	break
 case 'small':
-	width = '256px'
-	height = '144px'
+	width.value = '256px'
+	height.value = '144px'
+	break
+case 'semi-medium':
+	width.value = '374px'
+	height.value = '210px'
 	break
 }
+
 </script>
 
 <style scoped>

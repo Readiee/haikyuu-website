@@ -8,6 +8,7 @@
       </slot>
       <slot name="headerEnd">
         <btn-arrow
+          v-if="btnTitle"
           :title="props.btnTitle" 
           @click="routeTo()"
         />
@@ -24,7 +25,7 @@ import { useRouter } from 'vue-router'
 
 const props = defineProps({
 	title: { type: String, default: 'Название блока'},
-	btnTitle: { type: String, default: 'Перейти'},
+	btnTitle: { type: String, default: ''},
 	btnRouteName: { type: String, default: 'home' },
 	btnRouteUrl: { type: String, default: '' },
 }
