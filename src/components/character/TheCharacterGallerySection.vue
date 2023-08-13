@@ -62,21 +62,21 @@ const overlay = ref(false)
 const showOverlay = (clickedImageIndex) => {
 	overlay.value = true
 	currentImage.value = clickedImageIndex
-
-	// left&right arrow events for sliding
-	document.addEventListener('keydown', function(e) {
-		if (e.key === 'ArrowLeft') {
-			const leftArrowElement: HTMLElement = document.getElementsByClassName('v-window__left')[0] as HTMLElement
-			leftArrowElement.click()
-			return false
-		}
-		if (e.key === 'ArrowRight') {
-			const rightArrowElement: HTMLElement = document.getElementsByClassName('v-window__right')[0] as HTMLElement
-			rightArrowElement.click()
-			return false
-		}
-	})
 }
+
+// left&right arrow events for sliding
+document.addEventListener('keydown', function(e) {
+	if (e.key === 'ArrowLeft') {
+		const leftArrowElement: HTMLElement = document.getElementsByClassName('v-window__left')[0] as HTMLElement
+		leftArrowElement.click()
+		return false
+	}
+	if (e.key === 'ArrowRight') {
+		const rightArrowElement: HTMLElement = document.getElementsByClassName('v-window__right')[0] as HTMLElement
+		rightArrowElement.click()
+		return false
+	}
+})
 
 </script>
 
