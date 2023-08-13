@@ -1,29 +1,27 @@
 <template>
-  <div style="width: 300px;">
-    <v-card
-      width="100%"
-      color="background"
-      elevation="0"
-      class="pa-5"
-      @click="routeTo()"
-    >
-      <v-img :src="componentProps.character.imageRef" cover />
+  <v-card
+    width="300px"
+    color="background"
+    elevation="0"
+    class="pa-5"
+    @click="routeTo()"
+  >
+    <v-img :src="componentProps.character.imageRef" cover />
 
-      <h2 class="mt-7 mb-2 text--primary text-center">{{ componentProps.character.name }}</h2>
+    <h2 class="mt-7 mb-2 text--primary text-center">{{ componentProps.character.name }}</h2>
     
-      <ul class="infos">
-        <li class="d-flex justify-space-between align-center mb-1">
-          <h4>Рост:</h4>
-          <p class="font-weight-thin">{{ componentProps.character.height }} см</p>
-        </li>
+    <ul class="infos">
+      <li class="d-flex justify-space-between align-center mb-1">
+        <h4>Рост:</h4>
+        <p class="font-weight-thin">{{ componentProps.character.height }} см</p>
+      </li>
 
-        <li class="d-flex justify-space-between align-center">
-          <h4>Позиция:</h4>
-          <p class="font-weight-thin">{{ componentProps.character.position }}</p>
-        </li>
-      </ul>
-    </v-card>
-  </div>
+      <li class="d-flex justify-space-between align-center">
+        <h4>Позиция:</h4>
+        <p class="font-weight-thin">{{ componentProps.character.position }}</p>
+      </li>
+    </ul>
+  </v-card>
 </template>
 
 <script setup lang="ts">

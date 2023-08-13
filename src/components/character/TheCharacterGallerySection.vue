@@ -23,7 +23,7 @@
 
     <!-- too slow overlay loading -->
     <v-overlay v-model="overlay" class="overlay" scrim="black" scroll-strategy="block">
-      <v-card class="galleryCarousel" width="1000px" height="562px">
+      <v-card width="1000px" height="562px" @click.stop>
         <v-carousel v-model="currentImage" style="height: 100%;">
           <template v-for="(image, index) in props.images" :key="index">
             <v-carousel-item :src="image" cover />
@@ -50,7 +50,7 @@
 <script setup lang="ts">
 import ASection from '@/components/UI/ASection.vue'
 import ImageCard from '@/components/UI/ImageCard.vue'
-import { ref } from 'vue'
+import { ref, onMounted, onUnmounted } from 'vue'
 
 const props = defineProps({
 	images: { type: Array<string>, required: true }
@@ -59,13 +59,21 @@ const props = defineProps({
 const currentImage = ref(1)
 const overlay = ref(false)
 
+onMounted(() => {
+	document.addEventListener('keydown', slideCarousel)
+})
+
+onUnmounted(() => {
+	document.removeEventListener('keydown', slideCarousel)
+})
+
 const showOverlay = (clickedImageIndex) => {
 	overlay.value = true
 	currentImage.value = clickedImageIndex
 }
 
 // left&right arrow events for sliding
-document.addEventListener('keydown', function(e) {
+const slideCarousel = (e) => {
 	if (e.key === 'ArrowLeft') {
 		const leftArrowElement: HTMLElement = document.getElementsByClassName('v-window__left')[0] as HTMLElement
 		leftArrowElement.click()
@@ -76,8 +84,7 @@ document.addEventListener('keydown', function(e) {
 		rightArrowElement.click()
 		return false
 	}
-})
-
+}
 </script>
 
 <style lang="scss" scoped>
