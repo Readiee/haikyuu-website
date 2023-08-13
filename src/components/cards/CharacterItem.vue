@@ -1,5 +1,5 @@
 <template>
-  <div style="width: 300px;" @click="routeTo()">
+  <div style="width: 300px;">
     <v-card
       width="100%"
       color="background"
