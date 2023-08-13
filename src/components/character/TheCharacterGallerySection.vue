@@ -1,7 +1,7 @@
 <template>
   <a-section title="Галерея">
     <v-slide-group show-arrows>
-      <v-slide-group-item v-for="(image, index) in images" :key="index">
+      <v-slide-group-item v-for="(image, index) in props.images" :key="index">
         <image-card size="semi-medium" :image-ref="image" class="mx-4" @click="showOverlay(index)" />
       </v-slide-group-item>
 
@@ -22,10 +22,10 @@
     </v-slide-group>    
 
     <!-- too slow overlay loading -->
-    <v-overlay v-model="overlay" class="d-flex justify-center align-center" scroll-strategy="block">
+    <v-overlay v-model="overlay" class="overlay" scrim="black" scroll-strategy="block">
       <v-card class="galleryCarousel" width="1000px" height="562px">
         <v-carousel v-model="currentImage" style="height: 100%;">
-          <template v-for="(image, index) in images" :key="index">
+          <template v-for="(image, index) in props.images" :key="index">
             <v-carousel-item :src="image" cover />
           </template>
         </v-carousel>
